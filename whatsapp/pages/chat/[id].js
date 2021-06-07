@@ -14,7 +14,10 @@ function Chat({chat,messages}) {
             <Head>
                 <title>Chat with {getReceipientEmail(chat.users, user)}</title>
             </Head>
+            <Wrapper>
             <Sidebar/>
+            </Wrapper>
+            
             <ChatContaine>
                 <ChatScreen chat={chat} messages={messages}/>
             </ChatContaine>
@@ -62,12 +65,18 @@ export async function getServerSideProps(context){
 
 const Container = styled.div`
 display: flex;
+width: 100%;
 `;
 
 const ChatContaine = styled.div`
 flex:1;
 overflow:scroll;
 height:100vh;
+@media(max-width:750px){
+   width: 100%;
+    
+}
+
 
 ::-webkit-scroll{
     display: none;
@@ -76,3 +85,9 @@ height:100vh;
  scrollbar-width: none; /* firefox */
 `;
 
+const Wrapper = styled.div`
+@media(max-width:750px){
+    display: none;
+}
+
+`

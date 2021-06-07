@@ -75,6 +75,15 @@ min-width:300px;
 max-width:350px;
 overflow-y:scroll;
 
+@media(max-width:850px){
+    font-size: 12.5px;
+}
+
+@media(max-width:750px){
+   flex: 1;
+   max-width: 100%;
+}
+
 ::-webkit-scrollbar{
     display:none;
 }

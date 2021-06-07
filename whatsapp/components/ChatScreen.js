@@ -120,11 +120,11 @@ function ChatScreen({chat, messages}) {
 
             <HearderIcons>
                 <IconButton>
-                    <AttachFileIcon/>
+                    <AttachFileIcon className="icon"/>
                 </IconButton>
 
                 <IconButton>
-                    <MoreVertIcon/>
+                    <MoreVertIcon className="icon"/>
                 </IconButton>
             </HearderIcons>
 
@@ -149,7 +149,9 @@ function ChatScreen({chat, messages}) {
 export default ChatScreen;
 
 const Container = styled.div`
-
+@media(max-width:850px){
+    font-size: 11px;
+}
 `;
 
 const Header = styled.div` 
@@ -168,16 +170,28 @@ border-bottom: 1px solid whitesmoke;
 const HeaderInfomation = styled.div`
 padding:15px;
 flex:1;
+
 h3{
     margin-bottom:1px;
 }
 p{
     font-size:14px;
     color:gray;
+    @media(max-width:850px){
+    font-size: 11px;
+}
 }
 `;
 
-const HearderIcons = styled.div``;
+const HearderIcons = styled.div`
+
+
+.icon{
+    @media(max-width:750px){
+        font-size: 17px;
+}    
+}
+`;
 
 const EndofMessage = styled.div`
 margin-bottom:50px;
@@ -210,4 +224,7 @@ margin-left:15px;
 margin-right:15px;
 background-color:whitesmoke;
 
+@media(max-width:750px){
+    padding:12px;
+}
 `;
